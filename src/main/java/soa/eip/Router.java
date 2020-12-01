@@ -1,8 +1,6 @@
 package soa.eip;
 
-import org.apache.camel.Exchange;
 import org.apache.camel.Message;
-import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
 
@@ -28,7 +26,7 @@ public class Router extends RouteBuilder {
                         in.setHeader("count", count);
                         body = body.replace("max:" + count, "");
                         in.setBody(body);
-                    }else{
+                    } else {
                         // Default value = 5
                         in.setHeader("count", 5);
                     }
